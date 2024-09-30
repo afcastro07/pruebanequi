@@ -1,43 +1,17 @@
 package co.nequi.proyectofranquicias.servicios;
 
 import co.nequi.proyectofranquicias.entidades.Producto;
-import co.nequi.proyectofranquicias.operaciones.OperacionesProducto;
-import co.nequi.proyectofranquicias.repositorios.RepositorioProducto;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class ServiciosProducto implements OperacionesProducto {
-    @Autowired
-    RepositorioProducto repositorioProducto ;
+public interface ServiciosProducto {
+    public List<Producto> ListarProducto();
 
-    @Override
-    public Producto crear(Producto producto) {
-        return repositorioProducto.save(producto);
-    }
+    public Producto guardarProducto(Producto franquicia);
 
-    @Override
-    public Producto actualizar(Producto producto) {
-        if (this.consultarPK(producto.getIdproducto()) != null)
-            return repositorioProducto.save(producto);
-        return null;
-    }
+    public Producto obtenerProductoId(int id);
 
-    @Override
-    public void borrar(Producto producto) {
-        repositorioProducto.delete(producto);;
-    }
+    public Producto actualizarProducto(Producto franquicia);
 
-    @Override
-    public List<Producto> producto() {
-        return repositorioProducto.findAll();
-    }
-
-    @Override
-    public Producto consultarPK(int pk) {
-        Producto producto =  repositorioProducto.findById(pk).orElse(null);
-        return null;
-    }
+    public void eliminarProducto(int id);
 }

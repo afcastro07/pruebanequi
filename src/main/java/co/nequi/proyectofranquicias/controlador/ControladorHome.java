@@ -1,16 +1,22 @@
 package co.nequi.proyectofranquicias.controlador;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ControladorHome {
-    @GetMapping("/Franquicia")
-    public String administrador() {
-        return "administrador";
+    @GetMapping("/franquicias")
+    public String franquicias() {
+        return "franquicias";
     }
 
-    @GetMapping("/vendedor")
-    public String vendedor() {
-        return "vendedor";
+    @GetMapping("/productos")
+    public String productos() {
+        return "productos";
+    }
+
+    @GetMapping("/sucursales")
+    public String sucursales() {
+        return "sucursales";
     }
 }

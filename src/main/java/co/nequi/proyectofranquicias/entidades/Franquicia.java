@@ -5,7 +5,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
+
 @NoArgsConstructor
 @ToString
 @Entity(name = "Franquicia")
@@ -21,10 +21,6 @@ public class Franquicia implements Serializable{
 
     @Column(name = "nombrefranquicia", nullable = false)
     private String nombrefranquicia;
-
-    public Franquicia() {
-
-    }
 
     public Franquicia(int codigofranquicia, String nombrefranquicia) {
         this.codigofranquicia = codigofranquicia;
