@@ -2,7 +2,6 @@ package co.nequi.proyectofranquicias.controlador;
 
 import co.nequi.proyectofranquicias.entidades.Franquicia;
 import co.nequi.proyectofranquicias.servicios.ServiciosFranquicia;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
